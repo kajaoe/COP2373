@@ -3,7 +3,7 @@ TOTAL_TICKETS = 10
 MAX_TICKETS_PER_BUYER = 4
 
 # Track the inventory of tickets.
-def get_tickets(remaining_tickets):
+def get_tickets(available_tickets):
     try:
         # Prompt user on how many tickets they want and inform of the limit.
         requested_tickets = int(input('Howdy! Want to buy a ticket?\n'
@@ -16,8 +16,8 @@ def get_tickets(remaining_tickets):
             return 0
 
         # Prevent user from buying what is not available in inventory.
-        elif requested_tickets > remaining_tickets:
-            print(f'Sorry, we are in high demand! Only {remaining_tickets} tickets are left.')
+        elif requested_tickets > available_tickets:
+            print(f'Sorry, we are in high demand! Only {available_tickets} tickets are left.\n')
             return 0
 
         # Prevent user from entering zero or negative amount.
@@ -33,22 +33,22 @@ def get_tickets(remaining_tickets):
         return 0
 
 def main():
-    remaining_tickets = TOTAL_TICKETS
+    available_tickets = TOTAL_TICKETS
     total_buyers = 0
 
     # Prompt the user until inventory is clear.
-    while remaining_tickets > 0:
-        print(f'There are {remaining_tickets} tickets available during pre-sale.')
+    while available_tickets > 0:
+        print(f'There are {available_tickets} tickets available during pre-sale.')
 
         # Call the input function to get the purchase amount.
-        purchased_tickets = get_tickets(remaining_tickets)
+        purchased_tickets = get_tickets(available_tickets)
 
         # Tally each transaction.
         if purchased_tickets > 0:
-            remaining_tickets -= purchased_tickets
+            available_tickets -= purchased_tickets
             total_buyers += 1
             print('Thank you for your purchase!\n'
-                  f'There are still {remaining_tickets} tickets left.\n')
+                  f'There are still {available_tickets} tickets left.\n')
 
     # Announce when inventory is clear.
     print('\nPre-sale has ended!')

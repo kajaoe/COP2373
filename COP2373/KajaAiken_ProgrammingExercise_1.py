@@ -1,5 +1,5 @@
 # Set the constants for the ticket sales.
-TOTAL_TICKETS = 20
+TOTAL_TICKETS = 10
 MAX_TICKETS_PER_BUYER = 4
 
 # Track the inventory of tickets.

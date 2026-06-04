@@ -6,8 +6,8 @@ MAX_TICKETS_PER_BUYER = 4
 def get_tickets(remaining_tickets):
     try:
         # Prompt user on how many tickets they want and inform of the limit.
-        requested_tickets = int(input('How many tickets would you like to purchase?\n'
-                                      f'Maximum of {MAX_TICKETS_PER_BUYER} tickets per person.\n'
+        requested_tickets = int(input('Howdy! Want to buy a ticket?\n'
+                                      f'We can only sell {MAX_TICKETS_PER_BUYER} tickets per person!\n'
                                       '\n'))
         # Set a limit on amount of tickets to be purchased.
         if requested_tickets > MAX_TICKETS_PER_BUYER:

@@ -47,7 +47,7 @@ def main():
     user_ssn = input('Enter a Social Security Number (AAA-GG-SSSS): ').strip()
     user_zip = input('Enter a ZIP code: ').strip()
 
-    print('\n')9
+    print('\n')
     print('-' * 50)
     print('Here are your results!')
     print('-' * 50)
